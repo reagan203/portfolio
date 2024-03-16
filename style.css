@@ -1,66 +1,281 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    border:none;
-    outline:none;
-    font-family: 'poppins',sans-serif;
-    scroll-behavior: smooth scroll;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
 }
 
-:root{
-    --bg-color:#1f242d;
-    --second-bg-color:#323946;
-    --text-color:#fff;
-    --main-color: #0ef
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
 }
 
-
-html{
+html {
     font-size: 62.5%;
-    overflow-x:hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-body{
+body {
     background: var(--bg-color);
     color: var(--text-color);
+    font-size: 1.6rem;
+    line-height: 1.6;
 }
 
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
+section {
+    min-height: 100vh;
+    padding: 8rem 9% 2rem; /* Adjusted top padding for better spacing */
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content h1 {
+    font-size: 4.8rem; /* Decreased size for better visual hierarchy */
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-img img {
+    width: 35vw;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 2rem 9%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-
 }
 
-.logo{
+.logo {
     font-size: 2.5rem;
-    color: var(--text-color) ;
+    color: var(--text-color);
     font-weight: 600;
-    cursor:default;
+    cursor: default;
 }
 
 .navbar a {
-    font-size:1.7rem;
-    color:var(--text-color);
+    font-size: 1.7rem;
+    color: var(--text-color);
     margin-left: 4rem;
-    transition:3s;
-
+    transition: color 0.3s;
 }
 
 .navbar a:hover,
-.navbar a.active{
+.navbar a.active {
     color: var(--main-color);
 }
-#menu-icon{
-    font-size:3.6rem;
+
+#menu-icon {
+    font-size: 3.6rem;
     color: var(--text-color);
     display: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--second-bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 9%;
+    background: var(--second-bg-color);
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-img {
+    width: 35vw;
+    margin-left: 4rem; /* Adjusted margin to the left to separate the image from the text */
+}
+.about-img img {
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 400px; /* Set a maximum width for responsiveness */
+    max-height: 300px; /* Set a maximum height for responsiveness */
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 3rem; /* Adjusted margin for better spacing */
+}
+
+.about-content p {
+    margin-bottom: 2rem; /* Adjusted margin for better spacing */
+}
+
+.about-content .btn {
+    margin-top: 2rem; /* Added margin to separate the button from the paragraph */
+}
+
+
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.services-box p {
+    margin: 2rem 0 3rem;
+}
+
+.services-container .services-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.portfolio {
+    background: var(--second-bg-color);
+}
+
+.portfolio h2 {
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.portfolio-container .portfolio-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-box img {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.portfolio-layer {
+    position: absolute; /* Changed from relative to absolute */
+    top: 0; /* Positioned at the top of the container */
+    left: 0; /* Positioned at the left of the container */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darkened the background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 2rem; /* Adjusted padding for better spacing */
+}
+
+.portfolio-layer h4,
+.portfolio-layer p {
+    color: #fff; /* Set text color to white */
+}
+
+.portfolio-layer p {
+    margin-top: 1rem; /* Added margin-top to separate the heading and paragraph */
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: #fff; /* Set background color to white */
+    border-radius: 50%;
+    color: var(--main-color); /* Adjusted text color */
+    margin-top: 1.5rem; /* Added margin-top for spacing */
+}
+
+.portfolio-layer a i {
+    font-size: 2rem;
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .home-img img {
+        width: 100%;
+    }
+    
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.footer {
+    background-color: #1f242d;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    margin: 0 auto; /* Center align content */
 }
